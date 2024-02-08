@@ -1,0 +1,125 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:quotes_app/main.dart';
+import 'package:quotes_app/screens/home_screen.dart';
+import 'package:quotes_app/constants/constants.dart';
+
+final List<List<String>> skillsList = [
+  ['Css', 'images/css.png'],
+  ['JavaScript', 'images/javascript.png'],
+  ['JQuery', 'images/jquery.png'],
+  ['FastAPI', 'images/fastapi.png'],
+  ['C++', 'images/C++.png'],
+  ['Flutter', 'images/flutter.png'],
+  ['Dart', 'images/dartlogo.png'],
+  ['Python', 'images/python.png'],
+  ['Java', 'images/java.png'],
+  ['Html', 'images/Htmk.png'],
+];
+
+class SkillsScreen extends StatelessWidget {
+  const SkillsScreen({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+     final height = MediaQuery.of(context).size.height;
+     final media = MediaQuery.of(context).size;
+    return SizedBox(
+      height: height<1000 ? 500 : media.height *0.9,
+      child: Expanded(
+        child: Container(
+          margin: const EdgeInsets.all(48),
+          padding: EdgeInsets.all(16),
+          width: double.infinity,
+          decoration: BoxDecoration(
+              gradient: const LinearGradient(colors: [
+                Color(0xFF56238B),
+                Color(0xFF592BAB),
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+              borderRadius: BorderRadius.circular(20)),
+          child: Column(
+            children: [
+              AnimatedTextKit(animatedTexts: [
+                TyperAnimatedText('Skills and Abilities',
+                    textStyle: kconstNoramlText.copyWith(
+                        fontSize: 40, fontWeight: FontWeight.w500)),
+                ColorizeAnimatedText(
+                        'Skills and Abilities',
+                        textStyle:  const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        colors: colorizeColors,
+                      ),
+                      
+                      TypewriterAnimatedText('Skills and Abilities',
+                    textStyle: kconstNoramlText.copyWith(
+                        fontSize: 40, fontWeight: FontWeight.w500))
+              ]),
+              const SizedBox(
+                height: 20,
+              ),
+              GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 5,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 1.25,
+                  mainAxisSpacing: 10,
+                ),
+                itemCount: skillsList.length,
+                itemBuilder: (context, index) => Skillsdisplay(
+                  text: skillsList[index][0],
+                  logopath: skillsList[index][1],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Skillsdisplay extends StatelessWidget {
+  const Skillsdisplay({
+    super.key,
+    required this.text,
+    required this.logopath,
+  });
+
+  final String text;
+  final String logopath;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.black.withOpacity(0.8),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Image.asset(
+              logopath,
+              filterQuality: FilterQuality.high,
+              fit: BoxFit.scaleDown,
+                     
+            ),
+          ),
+          Text(
+            text,
+            style: kconstNoramlText.copyWith(fontSize: 20),
+          )
+        ],
+      ),
+    );
+  }
+}

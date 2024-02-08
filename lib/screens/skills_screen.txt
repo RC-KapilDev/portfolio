@@ -1,0 +1,80 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:quotes_app/main.dart';
+
+
+
+class SkillsScreen extends StatelessWidget {
+  const SkillsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: [
+          Color(0xFF56238B),
+          Color(0xFF592BAB),
+        ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+      ),
+      child: Column(
+        children: [
+          AnimatedTextKit(animatedTexts: [
+            TyperAnimatedText('Skills and Abilities',
+                textStyle: kconstNoramlText.copyWith(
+                    fontSize: 40, fontWeight: FontWeight.w500))
+          ]),
+          Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SkillsDisplay('Flutter', 'images/flutter.png'),
+              SkillsDisplay('Dart', 'images/dartlogo.png'),
+              SkillsDisplay('Python', 'images/python.png'),
+              SkillsDisplay('Java', 'images/java.png'),
+              SkillsDisplay('Html', 'images/Htmk.png'),
+            ],
+          ),
+          Row(
+            children: [
+              SkillsDisplay('Css', 'images/css.png'),
+              SkillsDisplay('JavaScript', 'images/javascript.png'),
+              SkillsDisplay('JQuery', 'images/jquery.png'),
+              SkillsDisplay('FastAPI', 'images/fastapi.png'),
+              SkillsDisplay('C++', 'images/C++.png'),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Container SkillsDisplay(String text, String logopath) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.black.withOpacity(0.8),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Image.asset(
+              logopath,
+              width: 50,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              text,
+              style: kconstNoramlText.copyWith(fontSize: 15),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
