@@ -24,6 +24,7 @@ class ProjectDetail extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           ),
         ),
+        const SizedBox(height: 15,),
         Text(
           projectList[index].description,
           style: const TextStyle(

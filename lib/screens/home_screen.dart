@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:quotes_app/main.dart';
+
 import 'package:quotes_app/widgets/social_media_buttons.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     super.key,
   });
 
-  Uri StringToUri(String text) {
+  Uri stringToUri(String text) {
     return Uri.parse(text);
   }
 
@@ -60,13 +60,13 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     SocilaMediaButton(
                         imgurl: 'images/lin.png',
-                        link: StringToUri("https://www.youtube.com/")),
+                        link: stringToUri("https://www.linkedin.com/in/kapildev-flutter-developer/")),
                     SocilaMediaButton(
                         imgurl: 'images/github.png',
-                        link: StringToUri("https://www.youtube.com/")),
+                        link: stringToUri("https://github.com/RC-KapilDev")),
                     SocilaMediaButton(
                         imgurl: 'images/yt.png',
-                        link: StringToUri("https://www.youtube.com/")),
+                        link: stringToUri("https://youtube.com/@techeye7005?si=UWYBGZ-8JlOPwtu1")),
                   ],
                 ),
                 const SizedBox(
@@ -112,7 +112,7 @@ class HomeScreenButtonMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () async {
-        if (geturl != null && geturl != " ") {
+        if ( geturl != " ") {
           if (!await launchUrl(Uri.parse(geturl))) {
             throw Exception('Could not launch $geturl');
           }

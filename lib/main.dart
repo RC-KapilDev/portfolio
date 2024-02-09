@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quotes_app/screens/projects_screen.dart';
 import 'package:quotes_app/screens/skills_screentry1.dart';
 import 'widgets/nav_buttons.dart';
+import 'constants/constants.dart';
 import 'screens/home_screen.dart';
 
-const kconstNoramlText =
-    TextStyle(fontFamily: 'Montserrat, sans-serif', color: Colors.white);
-const kMainBackGroundColor = Color(0xFF171C28);
+
+
 
 
 
@@ -25,79 +25,82 @@ class _MainAppState extends State<MainApp> {
   final navButtonKey = GlobalKey();
   final skillsButtonKey = GlobalKey();
 
-  Future Scrolltoitme(GlobalKey key) async {
+  Future scrollToItem(GlobalKey key) async {
     final context = key.currentContext;
     if (context != null) {
-      await Scrollable.ensureVisible(context, alignment: 0.5,duration: const Duration(milliseconds: 700));
+      await Scrollable.ensureVisible(context,
+          alignment: 0.5, duration: const Duration(milliseconds: 700));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final media = MediaQuery.of(context).size;
 
 
     return MaterialApp(
       theme: Theme.of(context).copyWith(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: kMainBackGroundColor,
+        appBar: AppBar(
+          toolbarHeight: 100,
           backgroundColor: kMainBackGroundColor,
-          appBar: AppBar(
-            toolbarHeight: 100,
-            backgroundColor: kMainBackGroundColor,
-            actions: [
-              Expanded(
-                flex: 1,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    LogoButton(),
-                  ],
-                ),
+          actions: [
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  logoButton(),
+                ],
               ),
-              Expanded(
-                flex: 2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    NavButton(
-                      text: 'Skills',
-                      onPress: () =>Scrolltoitme(navButtonKey),
-                      
-                    ),
-                    NavButton(text: 'Project',
-                    onPress: ()=>Scrolltoitme(skillsButtonKey),),
-                    // NavButton(text: 'Open Source'),
-                    // NavButton(text: 'Contact Me'),
-                  ],
-                ),
-              )
-            ],
-          ),
-          body: SingleChildScrollView(
+            ),
+            Expanded(
+              flex: 2,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  NavButton(
+                    text: 'Skills',
+                    onPress: () => scrollToItem(navButtonKey),
+                  ),
+                  NavButton(
+                    text: 'Project',
+                    onPress: () => scrollToItem(skillsButtonKey),
+                  ),
+                  // NavButton(text: 'Open Source'),
+                  // NavButton(text: 'Contact Me'),
+                ],
+              ),
+            )
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                // const HomeScreen(),
-                Container(
-                  key: navButtonKey,
-                  child: const SkillsScreen()),
-                 Container(key:skillsButtonKey ,child: ProjectScreen()),
-                
-            
+                const HomeScreen(),
+                Column(
+                  key: skillsButtonKey,
+                  children: const [
+                    SkillsScreen(),
+                  ],
+                ),
+                Container(key: navButtonKey, child: ProjectScreen()),
               ],
             ),
           ),
-          // floatingActionButton: FloatingActionButton(onPressed: ()=>Scrolltoitme(),child: Icon(Icons.arrow_drop_up)),
-    ),
-    
+        ),
+       
+      ),
     );
   }
 
-  InkWell LogoButton() {
+  InkWell logoButton() {
     return InkWell(
       onTap: () {},
       child: Container(
@@ -137,9 +140,3 @@ class _MainAppState extends State<MainApp> {
 
 
 
-// ListView.builder(
-//             itemCount: wid.length,
-//             itemBuilder: (context, index) {
-//               return wid[index];
-//             },
-//           )),

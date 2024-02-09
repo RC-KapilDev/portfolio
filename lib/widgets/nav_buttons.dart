@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quotes_app/main.dart';
+
+import 'package:quotes_app/constants/constants.dart';
 
 class NavButton extends StatelessWidget {
-  NavButton({Key? key, required this.text, required this.onPress})
-      : super(key: key);
+  const NavButton({super.key, required this.text, required this.onPress});
 
   final String text;
   final void Function() onPress;
@@ -26,7 +26,7 @@ class NavButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPress,
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+          padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),

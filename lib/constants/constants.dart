@@ -11,3 +11,8 @@ const defaultPadding = 20.0;
       
       Colors.red,
     ];
+
+
+    const kconstNoramlText =
+    TextStyle(fontFamily: 'Montserrat, sans-serif', color: Colors.white);
+const kMainBackGroundColor = Color.fromARGB(255, 10, 12, 15);

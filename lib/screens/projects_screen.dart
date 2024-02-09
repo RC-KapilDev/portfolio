@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quotes_app/constants/constants.dart';
 import 'package:quotes_app/controller/project_contorller.dart';
-import 'package:quotes_app/main.dart';
+
 import 'package:quotes_app/responsive/responsive.dart';
 import 'package:quotes_app/components/project_grid.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:quotes_app/constants/constants.dart';
 
 
 // final List<List<String>> projectsList = [
@@ -19,24 +21,38 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height:  MediaQuery.of(context).size.height*0.5,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [ 
-          if(Responsive.isLargeMobile(context)) const SizedBox(
-            height: defaultPadding,
-          ),
-          Expanded(child: 
-          Responsive(
-                  desktop: ProjectGrid(crossAxiscount: 3,),
-                  extraLargeScreen: ProjectGrid(crossAxiscount: 4,),
-                  largeMobile: ProjectGrid(crossAxiscount: 1,ratio: 1.8),
-                  mobile: ProjectGrid(crossAxiscount: 1,ratio: 1.5),
-                  tablet: ProjectGrid(ratio: 1.4,crossAxiscount: 2,)))
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [ 
+        Center(
+          child: AnimatedTextKit(animatedTexts: [
+                  TyperAnimatedText('Projects and Open Source',
+                      textStyle: kconstNoramlText.copyWith(
+                          fontSize: 40, fontWeight: FontWeight.w500)),
+                  ColorizeAnimatedText(
+                          'Projects and Open Source',
+                          textStyle:  const TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          colors: colorizeColors,
+                        ),
+                        
+                        TypewriterAnimatedText('Projects and Open Source',
+                      textStyle: kconstNoramlText.copyWith(
+                          fontSize: 40, fontWeight: FontWeight.w500))
+                ]),
+        ),
+        if(Responsive.isLargeMobile(context)) const SizedBox(
+          height: defaultPadding+10,
+        ),
+        Responsive(
+                desktop: ProjectGrid(crossAxiscount: 3,),
+                extraLargeScreen: ProjectGrid(crossAxiscount: 4,),
+                largeMobile: ProjectGrid(crossAxiscount: 1,ratio: 1.8),
+                mobile: ProjectGrid(crossAxiscount: 1,ratio: 1.5),
+                tablet: ProjectGrid(ratio: 1.4,crossAxiscount: 2,))
+      ],
     );
   }
 }

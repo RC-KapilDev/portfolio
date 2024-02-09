@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:quotes_app/main.dart';
+import 'package:quotes_app/constants/constants.dart';
 import 'package:quotes_app/responsive/responsive.dart';
 
 class TitleText extends StatelessWidget {
@@ -14,7 +14,7 @@ class TitleText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          '$prefix',
+          prefix,
           style: kconstNoramlText.copyWith(
               fontSize: !Responsive.isDesktop(context)
                   ? Responsive.isLargeMobile(context)
