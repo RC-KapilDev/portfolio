@@ -13,9 +13,7 @@ class SkillsScreen extends StatelessWidget {
       children: [
         AnimatedTextKit(animatedTexts: [
 
-                TyperAnimatedText('Skills and Abilities',
-                    textStyle: kconstNoramlText.copyWith(
-                        fontSize: defaultPadding, fontWeight: FontWeight.w500)),
+                
                 ColorizeAnimatedText(
                         'Skills and Abilities',
                         textStyle:  const TextStyle(
