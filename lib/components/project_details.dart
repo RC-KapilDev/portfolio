@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotes_app/components/project_link.dart';
 import 'package:quotes_app/constants/constants.dart';
-import 'package:quotes_app/main.dart';
 import 'package:quotes_app/model/project_model.dart';
 
 class ProjectDetail extends StatelessWidget {

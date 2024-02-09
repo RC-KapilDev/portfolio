@@ -28,11 +28,11 @@ class ProjectScreen extends StatelessWidget {
           child: AnimatedTextKit(animatedTexts: [
                   TyperAnimatedText('Projects and Open Source',
                       textStyle: kconstNoramlText.copyWith(
-                          fontSize: 40, fontWeight: FontWeight.w500)),
+                          fontSize: defaultPadding , fontWeight: FontWeight.w500)),
                   ColorizeAnimatedText(
                           'Projects and Open Source',
                           textStyle:  const TextStyle(
-                            fontSize: 40,
+                            fontSize: defaultPadding ,
                             fontWeight: FontWeight.w500,
                           ),
                           colors: colorizeColors,

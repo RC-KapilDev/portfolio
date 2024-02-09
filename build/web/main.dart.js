@@ -71082,14 +71082,14 @@ else if(r>=700&&!0)return s.f
 else if(r>=500&&!0)return s.d
 else return s.e}}
 A.In.prototype={
-N(a){var s,r,q="Projects and Open Source",p=null,o=A.a([A.l4(A.al3(A.a([A.aoD(q,B.dB.Lh(40,B.X)),A.alp(q,B.ly,B.wJ)],t.u6)),p,p)],t.F)
+N(a){var s,r,q="Projects and Open Source",p=null,o=A.a([A.l4(A.al3(A.a([A.aoD(q,B.dB.Lh(20,B.X)),A.alp(q,B.ly,B.wJ)],t.u6)),p,p)],t.F)
 if(A.cw(a,B.fm,t.w).w.a.a<=700)o.push(B.wr)
 s=A.Il(3,1.3)
 r=A.Il(4,1.3)
 o.push(new A.xD(s,A.Il(1,1.8),A.Il(1,1.5),A.Il(2,1.4),r,p))
 return A.us(o,B.aC,p,B.qq)}}
 A.K8.prototype={
-N(a){var s="Skills and Abilities",r=A.a([A.al3(A.a([A.aoD(s,B.dB.Lh(40,B.X)),A.alp(s,B.ly,B.wJ)],t.u6))],t.F)
+N(a){var s="Skills and Abilities",r=A.a([A.al3(A.a([A.aoD(s,B.dB.Lh(20,B.X)),A.alp(s,B.ly,B.wJ)],t.u6))],t.F)
 if(A.cw(a,B.fm,t.w).w.a.a<=700)r.push(B.wr)
 r.push(B.Lz)
 return A.us(r,B.aC,null,B.b3)}}
@@ -78887,7 +78887,7 @@ B.A0=new A.x(3506372608)
 B.De=new A.x(4294967040)
 B.P6=new A.v(!0,B.A0,null,"monospace",null,null,48,B.l6,null,null,null,null,null,null,null,null,null,B.wF,B.De,B.wD,null,"fallback style; consider putting your text in a Material",null,null,null,null)
 B.QT=new A.v(!0,null,null,null,null,null,null,B.e8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.wJ=new A.v(!0,null,null,null,null,null,40,B.X,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.wJ=new A.v(!0,null,null,null,null,null,20,B.X,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.C8=new A.x(4293848814)
 B.BO=new A.x(4292269782)
 B.J4=new A.bW([50,B.kL,100,B.kJ,200,B.C8,300,B.kF,350,B.BO,400,B.kC,500,B.kA,600,B.cE,700,B.dY,800,B.dX,850,B.fW,900,B.kq],t.pl)
