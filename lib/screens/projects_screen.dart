@@ -38,9 +38,7 @@ class ProjectScreen extends StatelessWidget {
                           colors: colorizeColors,
                         ),
                         
-                        TypewriterAnimatedText('Projects and Open Source',
-                      textStyle: kconstNoramlText.copyWith(
-                          fontSize: 40, fontWeight: FontWeight.w500))
+                       
                 ]),
         ),
         if(Responsive.isLargeMobile(context)) const SizedBox(

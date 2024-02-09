@@ -12,6 +12,7 @@ class SkillsScreen extends StatelessWidget {
     return Column(
       children: [
         AnimatedTextKit(animatedTexts: [
+          
                 TyperAnimatedText('Skills and Abilities',
                     textStyle: kconstNoramlText.copyWith(
                         fontSize: 40, fontWeight: FontWeight.w500)),
@@ -24,9 +25,6 @@ class SkillsScreen extends StatelessWidget {
                         colors: colorizeColors,
                       ),
                       
-                      TypewriterAnimatedText('Skills and Abilities',
-                    textStyle: kconstNoramlText.copyWith(
-                        fontSize: 40, fontWeight: FontWeight.w500))
               ]),
         if (Responsive.isLargeMobile(context))
           const SizedBox(
