@@ -21,6 +21,7 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     var size = MediaQuery.sizeOf(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [ 
@@ -29,8 +30,8 @@ class ProjectScreen extends StatelessWidget {
                   
                   ColorizeAnimatedText(
                           'Projects and Open Source',
-                          textStyle:  const TextStyle(
-                            fontSize: defaultPadding ,
+                          textStyle:   TextStyle(
+                            fontSize:  size.width > 700 && size.width < 750 ? defaultPadding+10 : size.width<470 ? defaultPadding+5 : size.width>600 && size.width < 700 ? defaultPadding+5 : size.width >900  ? defaultPadding+15 : defaultPadding,
                             fontWeight: FontWeight.w500,
                           ),
                           colors: colorizeColors,

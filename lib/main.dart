@@ -85,12 +85,12 @@ class _MainAppState extends State<MainApp> {
               children: [
                 // const HomeScreen(),
                 Column(
-                  key: skillsButtonKey,
+                  key: navButtonKey,
                   children: const [
                     SkillsScreen(),
                   ],
                 ),
-                Container(key: navButtonKey, child: ProjectScreen()),
+                Container(key: skillsButtonKey, child: ProjectScreen()),
               ],
             ),
           ),
