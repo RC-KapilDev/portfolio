@@ -83,7 +83,7 @@ class _MainAppState extends State<MainApp> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                // const HomeScreen(),
+                const HomeScreen(),
                 Column(
                   key: navButtonKey,
                   children: const [
