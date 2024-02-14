@@ -9,25 +9,30 @@ class SkillsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var size = MediaQuery.sizeOf(context);
+    var size = MediaQuery.sizeOf(context);
     return Column(
       children: [
         AnimatedTextKit(animatedTexts: [
-
-                
-                ColorizeAnimatedText(
-                        'Skills and Abilities',
-                        textStyle:   TextStyle(
-                          fontSize:size.width > 700 && size.width < 750 ? defaultPadding+10 : size.width<470 ? defaultPadding+5 : size.width>600 && size.width < 700 ? defaultPadding+5 : size.width >900  ? defaultPadding+15 : defaultPadding,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        colors: colorizeColors,
-                      ),
-                      
-              ]),
+          ColorizeAnimatedText(
+            'Skills and Abilities',
+            textStyle: TextStyle(
+              fontSize: size.width > 700 && size.width < 750
+                  ? defaultPadding + 10
+                  : size.width < 470
+                      ? defaultPadding + 5
+                      : size.width > 600 && size.width < 700
+                          ? defaultPadding + 5
+                          : size.width > 900
+                              ? defaultPadding + 15
+                              : defaultPadding,
+              fontWeight: FontWeight.w500,
+            ),
+            colors: colorizeColors,
+          ),
+        ]),
         if (Responsive.isLargeMobile(context))
           const SizedBox(
-            height: defaultPadding+10,
+            height: defaultPadding + 10,
           ),
         const Responsive(
             desktop: SkillsWidget(
@@ -41,7 +46,7 @@ class SkillsScreen extends StatelessWidget {
             tablet: SkillsWidget(
               ratio: 1.4,
               crossAxiscount: 3,
-            ))
+            )),
       ],
     );
   }
